@@ -1,0 +1,23 @@
+/* padding organiza o espaço interno e margin organiza o espaço externo. */
+
+/* Padding protege o conteúdo; margin protege o espaço ao redor. */
+
+.termos {
+  padding-top: 80px; /* distância acima */
+  padding-bottom: 80px; /* distância abaixo */
+}
+
+.termos h2 {
+  font-weight: 600; /* peso da fonte (espessura) */
+  margin-bottom: 20px; /* margem abaixo */
+}
+
+.termos p + h2 {
+  /* será aplicado em todo h2 que seja seguido de um p, ou seja no primeiro h2 do container não será aplicado */
+  margin-top: 40px; /* margem acima */
+}
+
+.termos p {
+  max-width: 75ch; /* largura máxima em caracteres */
+  margin-bottom: 24px; /* margem abaixo */
+}

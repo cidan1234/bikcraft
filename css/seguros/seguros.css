@@ -1,0 +1,80 @@
+/* padding organiza o espaço interno e margin organiza o espaço externo. */
+
+/* Padding protege o conteúdo; margin protege o espaço ao redor. */
+
+.seguros-bg {
+  background: var(--cor-11); /* cor de fundo */
+}
+
+.seguros {
+  padding-top: 60px; /* distância acima */
+  padding-bottom: 60px; /* distância abaixo */
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso 2 colunas com mesmo tamanho*/
+  gap: 40px; /* distância entre os elementos */
+  align-items: center; /* alinhamento vertical de cada container de seguro ao centro */
+}
+
+#seguros .seguros {
+  padding-top: 0px; /* distância acima */
+}
+
+.seguros h2 {
+  grid-column: 1/-1; /* faz o conteúdo ocupar da primeira até a última coluna */
+}
+
+.seguros-item {
+  background-color: var(--cor-12); /* cor de fundo */
+  padding: 32px 32px 32px 60px; /* distâncias acima, direita, abaixo e esquerda */
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr auto; /* duas colunas, a primeira cresce infinitamente e a segunda terá o tamanho máximo do conteúdo (neste caso a segunda é apenas o span de preço e mensal) */
+  border-radius: 4px; /* arredondamento de borda */
+}
+
+.seguros-item h3 {
+  margin-bottom: 40px; /* margem abaixo*/
+}
+
+.seguros-item span {
+  grid-column: 2; /* define que o item sempre estará ma segunda coluna */
+  display: block; /* força o elemento a se comportar como um bloco e não um inline, com isso ocorre a quebra de linha */
+  text-align: right; /* alinhamento do texto à direita*/
+}
+
+.seguros-item ul {
+  grid-column: 1/-1; /* faz o conteúdo ocupar da primeira até a última coluna */
+  margin-bottom: 32px; /* margem abaixo */
+}
+
+.seguros-item li {
+  display: flex; /* ativa o formato flexbox ( um ao lado do outro), neste caso é necessário para o alinhamento funcionar corretamente */
+  align-items: center; /* alinhamento vertical ao centro */
+  position: relative; /*faz o elemento permanecer no fluxo normal da página (na sua posição original) - usado para travar o conteúdo caso tenha outro conteúdo no bloco que precisa ser alterada sua posição (o outro elemento será position: absolute)*/
+}
+
+.seguros-item li + li {
+  /* só vai funcionar no li seguido de outro li, evitando assim q a configuração pegue também na primeira linha */
+  margin-top: 20px; /* margem acima */
+}
+
+.seguros-item li::before {
+  /* ícone de "ok" da lista */
+  content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
+  display: inline-block; /*define um elemento como um "bloco em linha", permitindo assim personalizar tamanho e espaçamento (mantém o padding mesmo se a tela for reduzida)*/
+  width: 13px; /* largura */
+  height: 9px; /* altura */
+  background-image: url("../../img/icones/lista.svg"); /* imagem de fundo */
+  position: absolute; /*faz com que o elemento seja removido do fluxo normal, posicionando-o relativamente ao elemento pai (ao bloco q foi definido como position:relative, se não tivesse um elemento pai com a configuração de position ele seria movido em relação ao html ou body)*/
+  left: -21px; /* distância à esquerda */
+}
+
+.seguros-item a {
+  grid-column: 1/-1; /* faz o conteúdo ocupar da primeira até a última coluna */
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executareste bloco*/
+  .seguros {
+    grid-template-columns: 1fr; /* passará a ter apenas uma coluna*/
+  }
+}

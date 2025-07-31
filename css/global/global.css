@@ -1,0 +1,39 @@
+/* padding organiza o espaço interno e margin organiza o espaço externo. */
+
+/* Padding protege o conteúdo; margin protege o espaço ao redor. */
+
+body {
+  margin: 0px; /* reseta a margem do site */
+  font-family: Arial, Helvetica, sans-serif; /* define a fonte geral do site */
+  color: #111111; /* cor do texto */
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p,
+dd,
+blockquote {
+  margin: 0px; /* reseta a margem da lista de links */
+}
+
+ul {
+  padding: 0px; /* reseta o padding da lista de links */
+  list-style: none; /* retira o ifem padrão de itens em lista */
+}
+
+a {
+  text-decoration: none; /* retira o sublinhado dos links */
+  color: inherit; /* faz herdar a cor do pai */
+}
+
+img {
+  max-width: 100%; /*largura máxima*/
+  display: block; /*faz o elemento se comportar como um bloco*/
+}
+
+img[src$=".jpg"] { /* seletor de atributo com sufixo, que seleciona apenas imagens (img) cujo atributo src termina com .jpg */
+  border-radius: 4px; /* arredondamento da borda */
+}

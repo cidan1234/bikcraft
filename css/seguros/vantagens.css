@@ -1,0 +1,44 @@
+/* padding organiza o espaço interno e margin organiza o espaço externo. */
+
+/* Padding protege o conteúdo; margin protege o espaço ao redor. */
+
+.vantagens-bg {
+  background-color: var(--cor-12); /* cor de fundo */
+}
+
+.vantagens {
+  padding-top: 120px; /* distância acima */
+  padding-bottom: 120px; /* distância abaixo */
+}
+
+.vantagens h2 {
+  margin-bottom: 60px; /* margem abaixo */
+}
+
+.vantagens ul {
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, max-content)
+  ); /* irá repetir colunas, com o valor q couber na página (auto-fit), com tamanho mínimo de 280px e máximo do tamanho do conteúdo */
+  gap: 40px 80px; /* distância entre os elementos */
+}
+
+.vantagens h3,
+.vantagens img {
+  margin-bottom: 8px; /* margem abaixo */
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executar este bloco*/
+  .vantagens {
+    padding-top: 60px; /* distância acima */
+    padding-bottom: 60px; /* distância abaixo */
+  }
+  .vantagens h2 {
+    margin-bottom: 40px; /* margem abaixo */
+  }
+  .vantagens ul {
+    gap: 20px; /* distância entre os elementos */
+  }
+}

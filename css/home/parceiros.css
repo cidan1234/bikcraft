@@ -1,0 +1,56 @@
+.parceiros {
+  padding-top: 60px; /* distância acima */
+  padding-bottom: 120px; /* distância abaixo */
+}
+
+.parceiros h2 {
+  margin-bottom: 60px; /* margem abaixo */
+}
+
+.parceiros ul {
+  padding: 0 20px; /* distância acima/abaixo direita/esquerda */
+  max-width: 1400px; /* largura máxima */
+  display: grid; /* ativa o formato grid (colunas). Se fosse display: flex não ficaria alinhado em coluna ficaria de acordo com o tamanho de cada item*/
+  grid-template-columns: repeat(4, 1fr); /* quantidade de colunas, neste caso repete a criação de quatro colunas com mesmo tamanho*/
+  margin: 0 auto; /* 0 = acima/abaixo, auto = direita/esquerda - depois q a lista crescer acima de 1400px vai centralizar o conteúdo*/
+}
+
+.parceiros li {
+  display: flex; /*  ativa o formato flexbox ( um ao lado do outro). Cada li é uma célula dentro de um grid (ul = display:grid) e célula do grid não controla alinhamento interno, para que margin: auto da imagem funcione dentro da célula, o li precisa permitir isso, definindo assim como display: flex (ou grid) no próprio li  */
+  padding: 32px; /* distância em todas as direções */
+  border-left: 2px solid var(--cor-2); /* adiciona borda esquerda com a cor definida em utilidades/cores.css*/
+}
+
+.parceiros img {
+  margin: auto; /* cria margens automáticas centralizando a imagem, mas neste caso se tratando de imagem só funciona se o elemento tiver como “limite” um container que aceite esse comportamento, portanto o li precisa se comportar como um container flexível.*/
+}
+
+.parceiros li:first-child,
+.parceiros li:nth-child(5) { /* seleciona o primeiro item e o item número 5 na lista li */
+  border-left: none; /* retira a borda da esquerda */
+}
+
+.parceiros li:nth-child(n+5) { /* seleciona do item número 5 em diante */
+  border-top: 2px solid var(--cor-2); /* adiciona borda superior com a cor definida em utilidades/cores.css*/
+}
+
+@media (max-width: 800px) { /*se a tela for menor que 800px de largura irá executar este bloco*/
+  .parceiros {
+    padding-bottom: 60px; /* distância abaixo */
+  }
+  .parceiros li {
+    padding: 20px; /* distância em todas as direções */
+  }
+  .parceiros h2 {
+    margin-bottom: 20px; /* margem abaixo */
+  }
+  .parceiros ul {
+    grid-template-columns: repeat(2, 1fr); /* quantidade de colunas, neste caso repete a criação de duas colunas com mesmo tamanho*/
+  }
+  .parceiros li:nth-child(n+3) { /* seleciona do item número 3 em diante */
+    border-top: 2px solid var(--cor-2); /* adiciona borda superior com a cor definida em utilidades/cores.css*/
+  }
+  .parceiros li:nth-child(odd) { /* seleciona itens ímpares */
+    border-left: none; /* retira a borda da esquerda */
+  }
+}

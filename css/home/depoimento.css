@@ -1,0 +1,58 @@
+.depoimento {
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso duas colunas com tamanhos iguais */
+  background-color: var(--cor-p1); /* cor de fundo definida em utilidades/cores.css */
+  overflow: hidden; /* esconde o conteúdo que estiver estourando o container ao invés de criar barra de rolagem lateral */
+}
+
+.depoimento img {
+  width: 100%; /* largura máxima. É sempre bom quando quiser forçar q a imagem fique com tamanho de 100% defina o width e o height com 100%, pois em alguns browsers a imagem pode crescer demais se definir apenas um dos dois com 100%**/
+  height: 100%; /* altura máxima/
+  object-fit: cover; /* faz com que a imagem preencha completamente o container, sem distorção, cortando partes da imagem se necessário para manter a proporção. Deve ser usado apenas para imagem que pode ser cortada */
+  border-radius: 0px; /* sem arredondamento de borda, setando o que foi definido antes no arquivo global>global.css */
+}
+
+.depoimento-conteudo {
+  padding: 40px 40px 80px 80px; /* distância acima, direita, abaixo e esquerda */
+  align-self: flex-end; /* alinha verticalmente o texto ao final do container */
+}
+
+.depoimento-conteudo p {
+  max-width: 32ch; /* largura máxima do texto de 32 caracteres*/
+  font-family: "Merriweather", serif; /* fonte do texto */
+  font-style: italic; /* estilo do texto */
+  font-weight: 900; /* espessura do texto */
+  margin-bottom: 32px; /* margem abaixo */
+  position: relative; /*faz o elemento permanecer no fluxo normal da página (na sua posição original) - usado para travar o coteúdo caso tenha outro conteúdo no bloco que precisa ser alterada sua posição (elemento position: absolute)*/
+}
+
+.depoimento p::before, 
+.depoimento p::after { /* configuração básica do que aparecerá antes e após o parágrafo */
+  font-size: 5rem; /* tamanho do texto */
+  color: var(--cor-p2); /* cor do texto definida em utilidades>cores.css */
+  position: absolute; /*faz com que o elemento seja removido do fluxo normal, posicionando-o relativamente ao elemento pai (ao bloco q foi definido como position: relative, se não tivesse um elemento pai com a configuração de position ele seria movido em relação ao html ou body)*/
+}
+
+.depoimento p::before { /* aparecerá antes do parágrafo, neste caso será as aspas de abertura*/
+  content: "“"; /* conteúdo */
+  left: -50px; /* posição à esquerda */
+  top: -20px; /* posição acima */
+}
+
+.depoimento p::after { /* aparecerá depois do parágrafo, neste caso será as aspas de fechamento*/
+  content: "”"; /* conteúdo */
+}
+
+@media (max-width: 800px) { /* se a tela for menor que 800px de largura irá executar este bloco*/
+  .depoimento {
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso uma única coluna */
+    text-align: center; /* alinhamento do texto ao centro */
+  }
+  .depoimento img {
+    max-height: 200px; /* altura máxima */
+  }
+  .depoimento-conteudo {
+    padding: 40px 20px; /* distância acima/abaixo, direita/esquerda */
+    justify-self: center; /* centraliza horizontamente um item individual dentro de um container com display:grid */
+  }
+}

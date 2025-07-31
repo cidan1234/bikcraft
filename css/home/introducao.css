@@ -1,0 +1,74 @@
+/* padding organiza o espaço interno e margin organiza o espaço externo. */
+
+/* Padding protege o conteúdo; margin protege o espaço ao redor. */
+
+.introducao-bg {
+  background: var(--cor-12); /* cor de fundo definida em utilidades/cores.css */
+  box-shadow: inset 0 -120px var(--cor-0); /* sombreamento, nesse caso vai deixar uma parte inferior do background branco, fazendo a ilusão de q a imagem passa do tamanho total do fundo (cor de fundo definida em utilidades/cores.css) */
+}
+
+.introducao {
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso duas colunas com tamanhos iguais */
+  gap: 0px 40px; /* distância entre os elementos */ 
+}
+
+.introducao-conteudo {
+  align-self: end; /* alinha ao final este item em específico */
+  padding-bottom: 200px; /* distância abaixo, tamanho grande porque irá pegar também o tamanho do sombreamento branco */
+}
+
+.introducao img {
+  width: 100%; /* largura máxima. É sempre bom quando quiser forçar q a imagem fique com tamanho de 100% defina o width e o height com 100%, pois em alguns browsers a imagem pode crescer demais se definir apenas um dos dois com 100%**/
+  height: 100%; /*altura*/
+  object-fit: cover; /* ajusta o objeto preenchendo a caixa inteira, pode cortar as bordas para manter proporção. */
+  border-radius: 4px; /* arredondamento da borda */
+}
+
+.introducao h1 {
+  margin-bottom: 32px; /* margem abaixo */
+  
+}
+
+.introducao p {
+  margin-bottom: 20px; /* distância abaixo */
+}
+
+@media (max-width: 1200px) {
+  /*se a tela for menor que 1200px de largura irá executar este bloco*/
+  .introducao h1 {
+    /* título da introdução */
+    font-size: 48px; /* tamanho do texto */
+  }
+  .introducao p {
+    /*parágrafo da introdução */
+    font-size: 18px; /* tamanho do texto */
+  }
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executar este bloco*/
+  .introducao-bg {
+    /* background introdução */
+    background: var(--cor-11); /* cor de fundo definida em utilidades/cores.css */
+    padding-top: 40px; /* distância acima */
+    box-shadow: inset 0 -60px #ffffff; /* sobreamento */
+  }
+  .introducao {
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso uma única coluna */
+    gap: 32px; /* distância entre os elementos */
+  }
+  .introducao-conteudo {
+    /* bloco da introdução */
+    padding-bottom: 0px; /* distância abaixo */
+  }
+  .introducao h1 {
+    /* título da introdução */
+    margin-bottom: 16px; /* margem abaixo */
+  }
+  .introducao img {
+    /* imagem da introdução */
+    height: 300px; /* altura */
+    width: 100%; /* largura */
+  }
+}

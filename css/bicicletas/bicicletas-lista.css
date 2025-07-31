@@ -1,0 +1,79 @@
+.bicicletas-lista {
+  /* toda o container */
+  padding-top: 60px; /* distância acima */
+  padding-bottom: 120px; /* distância abaixo */
+}
+
+.bicicletas-lista h2 {
+  /* título "escolha a sua"" */
+  margin-bottom: 40px; /* margem abaixo */
+}
+
+.bicicletas-lista ul {
+  /* toda a lista */
+  display: flex; /*ativa o modo flex (lado a lado)*/
+  gap: 40px; /* distância entre os elementos */
+  padding: 0px 20px 20px 20px; /* distâncias acima, direita, abaixo, esquerda  */
+  max-width: 1400px; /* largura máxima */
+  margin-left: auto; /* ocupa todo o espaço disponível à esquerda do elemento */
+  margin-right: auto; /* ocupa todo o espaço disponível à direita do elemento */
+  overflow-x: auto; /* adiciona automaticamente uma barra de rolagem horizontal (eixo x) se o conteúdo for maior do que a largura da caixa */
+}
+
+.bicicletas-lista li {
+  /* cada item da lista */
+  flex: 1; /* atalho para controlar quanto espaço um item flexível deve ocupar dentro de um contêiner (= flex-grow: 1, flex-shrink: 1 e flex-basis: 0%) */
+  min-width: 280px; /* largura mínima */
+}
+
+.bicicletas-lista a {
+  /* cada parte clicável da lista */
+  display: block; /* faz o elemento se comportar como um bloco. Neste caso quando utiliza o tab é selecionado todo o conteudo do container */
+}
+
+.bicicletas-lista img {
+  /* imagem dentro da lista */
+  margin-bottom: 16px; /* margem abaixo */
+}
+
+.bicicletas-lista h3 {
+  /* título de cada item da lista (nome das biciletas) */
+  margin-bottom: 8px; /* margem abaixo */
+  display: flex; /*ativa o modo flex (lado a lado). Neste caso foi necessário para o titulo h3 ficar ao lado do item decorativo criado abaixo (no h3:before)*/
+  align-items: center; /* alinha verticalmente os itens flexíveis no centro da linha (item decorativo e título h3) */
+}
+
+.bicicletas-lista h3::before {
+  /* item decorativo antes dos títulos h3 */
+  content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
+  display: inline-block; /*define um elemento como um "bloco em linha", permitindo assim personalizar tamanho e espaçamento (mantém o padding mesmo se a tela for reduzida)*/
+  height: 8px; /* altura */
+  width: 12px; /* largura */
+  margin-right: 8px; /* margem à direita */
+  background-color: var(
+    --cor-p1
+  ); /* cor de fundo (cor já definida no arquivo cores.css) */
+  transition: width 0.2s; /* transição suave na largura com duração de 0.2 segundos */
+}
+
+.bicicletas-lista a:hover h3::before {
+  /*quando passar o mouse em cima do item decorativo que está antes dos títulos h3 */
+  width: 24px; /* largura */
+}
+
+.bicicletas-lista li span {
+  /* preço */
+  padding-left: 20px; /* distância à esquerda (para ficar alinhado com o título h3 */
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executar este bloco*/
+  .bicicletas-lista {
+    /* toda o container */
+    padding-bottom: 60px; /* distância abaixo */
+  }
+  .bicicletas-lista ul {
+    /* toda a lista */
+    gap: 20px; /* distância entre os elementos */
+  }
+}

@@ -1,0 +1,67 @@
+/* padding organiza o espaço interno e margin organiza o espaço externo. */
+
+/* Padding protege o conteúdo; margin protege o espaço ao redor. */
+
+.perguntas {
+  padding-top: 120px; /* distância acima */
+  padding-bottom: 120px; /* distância abaixo */
+}
+
+.perguntas h2 {
+  margin-bottom: 60px; /* margem abaixo */
+}
+
+.perguntas dl > div { /* acessa a div filha direta de dl */
+  padding: 20px; /* distância em todos os lados */
+  border-radius: 4px; /* arredondamento de borda */
+}
+
+.perguntas dl > div:nth-child(odd) {
+  background-color: var(--cor-1); /* cor de fundo */
+}
+
+.perguntas dt {
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: auto 1fr auto; /* quantidade de colunas, neste case 3 colunas, sendo: a primeira com tamanho do conteúdo, a segunda irá expnadir o quanto der e a teceira também do tamanho do conteúdo */
+  align-items: center; /* alinhamento vertical de cada container de seguro ao centro */
+  gap: 8px; /* distância entre os elementos */
+  cursor: pointer; /* muda o cursor para mãozinha*/
+}
+
+.perguntas dt::before { /* ícone decorativo amarelo antes das perguntas */
+  content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
+  display: inline-block; /*define um elemento como um "bloco em linha", permitindo assim personalizar tamanho e espaçamento (mantém o padding mesmo se a tela for reduzida)*/
+  width: 12px; /* largura */
+  height: 8px; /* altura */
+  background-color: var(--cor-p1); /* cor de fundo */
+}
+
+.perguntas dt::after {
+  content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
+  display: inline-block; /*define um elemento como um "bloco em linha", permitindo assim personalizar tamanho e espaçamento (mantém o padding mesmo se a tela for reduzida)*/
+  width: 14px; /* largura */
+  height: 6px; /* altura */
+  background: url("../../img/icones/seta-abrir.svg"); /* imagem de fundo */
+  transition: 0.3s; /* transição/animação */
+}
+
+.perguntas dt:hover::after {
+  transform: rotate(180deg); /* rotaciona 180º */
+}
+
+.perguntas dd {
+  padding-left: 20px; /* distância à esqerda */
+  padding-top: 16px; /* distância acima */
+  max-width: 80ch; /* largura máxima em caracteres */
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executar este bloco*/
+  .perguntas {
+    padding-top: 60px; /* distância acima */
+    padding-bottom: 60px; /* distância abaixo */
+  }
+  .perguntas h2 {
+    padding-bottom: 40px; /* distância abaixo */
+  }
+}

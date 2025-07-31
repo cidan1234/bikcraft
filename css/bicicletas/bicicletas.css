@@ -1,0 +1,115 @@
+/* padding organiza o espaço interno e margin organiza o espaço externo. */
+
+/* Padding protege o conteúdo; margin protege o espaço ao redor. */
+
+.bicicletas-bg {
+  background: linear-gradient(
+    to right,
+    var(--cor-0) 30%,
+    var(--cor-11) 0%
+  ); /* cor de fundo de forma gradiente com transição seca */
+}
+
+.bicicletas {
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso 2 colunas com mesmo tamanho*/
+  gap: 40px; /* distância entre os elementos */
+  padding-top: 60px; /* distância acima */
+  padding-bottom: 60px; /* distância abaixo */
+}
+
+.bicicletas-imagem {
+  display: grid; /* ativa o formato grid (colunas). Na classe bicicletas-imagem tem uma imagem e um span, então ficará os dois como colunas. */
+}
+.bicicletas-imagem img {
+  grid-area: 1/1; /* define que o img irá ocupar a primeira linha e a primeira coluna */
+}
+
+.bicicletas-imagem span {
+  grid-area: 1/1; /* define que o span também irá ocupar a primeira linha e a primeira coluna, com isso por padrão os dois (img e span) tendem a ocupar por inteiro o mesmo espaço */
+  place-self: start end; /* alinha o item horizontalmente e verticalmente ao mesmo tempo, neste caso será alinhado no topo e no final da célula */
+  margin-top: 20px; /* margem acima */
+  background: var(--cor-12); /* cor de fundo */
+  display: inline-block; /* define um elemento como um "bloco em linha", permitindo assim personalizar tamanho e espaçamento (mantém o padding mesmo se a tela for reduzida) e assim também não irá expandir 100% na linha */
+  padding: 8px 16px 8px 8px; /* distância acima, direita, abaixo e esquerda */
+  border-radius: 4px 0 0 4px; /* arredondamento da borda em sentido horário (esquerda superior, direita superior, direita inferior e esquerda inferior) */
+}
+
+.bicicletas-conteudo {
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr auto; /* quantidade de colunas, neste caso 2 colunas, a primeira com tamanho total disponível e a segunda apenas com tamanho do conteúdo (a segunda será apenas o botão) */
+  align-content: start; /* alinha verticalmente o conteúdo ao início */
+}
+
+.bicicletas h2,
+.bicicletas p {
+  grid-column: 1/-1; /* faz o conteúdo ocupar da primeira até a última coluna */
+}
+
+.bicicletas h2 {
+  margin-bottom: 20px; /* margem abaixo */
+}
+
+.bicicletas h2::before {
+  /* ícone decorativo acima do nome */
+  content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
+  display: block; /*faz se comportar como um bloco*/
+  width: 12px; /* largura */
+  height: 8px; /* altura */
+  background-color: var(--cor-p1); /* cor de fundo */
+  margin-bottom: 8px; /* margem abaixo */
+}
+
+.bicicletas p {
+  margin-bottom: 32px; /* margem abaixo */
+}
+
+.bicicletas a {
+  place-self: end; /* alinha o item horizontalmente e verticalmente ao mesmo tempo, neste caso será alinhado ao final */
+}
+
+.bicicletas li {
+  display: flex; /* ativa o formato flexbox ( um ao lado do outro), neste caso é necessário para o alinhamento funcionar corretamente */
+  align-items: center; /* alinha verticalmente os itens ao centro */
+}
+
+.bicicletas ul {
+  /* outra forma de distanciar os elementos da lista */
+  display: grid; /* ativa o formato grid (colunas) */
+  gap: 16px; /* distância entre os elementos */
+}
+
+.bicicletas-conteudo img {
+  width: 24px; /* largura */
+  margin-right: 8px; /* margem direita */
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executareste bloco*/
+  .bicicletas-bg {
+    background: var(--cor-11); /* cor de fundo */
+  }
+  .bicicletas {
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso 1 coluna apenas*/
+    gap: 20px; /* distância entre os elementos */
+    padding-top: 40px; /* distância acima */
+    padding-bottom: 40px; /* distância abaixo */
+  }
+}
+
+@media (max-width: 600px) {
+  /*se a tela for menor que 600px de largura irá executareste bloco*/
+  .bicicletas-conteudo {
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso 1 coluna apenas (até o botão passa a ficar na mesma coluna)*/
+  }
+
+  .bicicletas ul {
+    font-size: 1rem; /* tamanho do texto */
+    grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso 2 colunas com tamanho iguais*/
+    margin-bottom: 32px; /* margem abaixo */
+  }
+
+  .bicicletas a {
+    place-self: start; /* alinha o item horizontalmente e verticalmente ao mesmo tempo, neste caso será alinhado ao ínício */
+  }
+}

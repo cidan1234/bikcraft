@@ -1,0 +1,83 @@
+.tecnologia-bg {
+  background-color: var(
+    --cor-11
+  ); /* cor de fundo definida em utilidades/cores.css */
+  box-shadow: inset 0 80px var(--cor-0), inset 0 -80px var(--cor-0); /* sombreamento, nesse caso vai deixar uma parte superior (valor em px positivo) e inferior (valor em px negativo) do background branco, fazendo a ilusão de q a imagem passa do tamanho total do fundo (cor de fundo definida em utilidades/cores.css) */
+}
+
+.tecnologia {
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso duas colunas com tamanhos iguais */
+  gap: 40px; /* distância entre os elementos */
+}
+
+.tecnologia-imagem img {
+  width: 100%; /* largura máxima. É sempre bom quando quiser forçar q a imagem fique com tamanho de 100% defina o width e o height com 100%, pois em alguns browsers a imagem pode crescer demais se definir apenas um dos dois com 100%**/
+  height: 100%; /* altura máxima/
+  object-fit: cover; /* impede que tire a proporção da foto, não deixa distorcer */
+  object-position: left; /* imagem estárá sempre alinhada à esquerda e irá cortar no lado oposto */
+}
+
+.tecnologia-conteudo {
+  padding-top: 160px; /* distância acima */
+  padding-bottom: 160px; /* distância abaixo */
+}
+
+.tecnologia-conteudo > span { /*  seleciona todos os elementos <span> que são filhos diretos (>) da classe .tecnologia-conteudo */
+  display: block; /*faz o elemento se comportar como um bloco*/
+  margin-bottom: 20px; /* margem abaixo */
+}
+
+.tecnologia-conteudo h2 {
+  margin-bottom: 32px; /* margem abaixo */
+}
+
+.tecnologia-conteudo > p { /*  seleciona todos os elementos <p> que são filhos diretos (>) da classe .tecnologia-conteudo */
+  margin-bottom: 20px; /* margem abaixo */
+}
+
+.tecnologia a {
+  margin-bottom: 80px; /* margem abaixo */
+}
+
+.tecnologia-vantagens {
+  display: flex; /* ativa o formato flexbox ( um ao lado do outro) */
+  gap: 40px; /* distância entre os elementos */
+}
+
+.tecnologia-vantagens h3 {
+  margin-bottom: 8px; /* margem abaixo */
+  width: max-content; /* largura com tamanho máximo do conteúdo (não permite q ao reduzir a tela o texto seja quebrado) */
+}
+
+.tecnologia-vantagens img {
+  width: 24px; /* largura */
+  margin-bottom: 8px; /* margem abaixo */
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executar este bloco*/
+  .tecnologia-bg {
+    box-shadow: initial; /* sombreamento. initial = reseta o valor da propriedade box-shadow para o valor padrão (inicial) */
+  }
+  .tecnologia {
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso uma única coluna */
+  }
+  .tecnologia-conteudo {
+    padding-top: 60px; /* distância acima */
+    padding-bottom: 60px; /* distância abaixo */
+  }
+  .tecnologia-imagem {
+    display: none; /* some com a imagem */
+  }
+  .tecnologia a {
+    margin-bottom: 60px; /* margem abaixo */
+  }
+}
+
+@media (max-width: 600px) {
+  /*se a tela for menor que 800px de largura irá executar este bloco*/
+  .tecnologia-vantagens {
+    flex-direction: column; /* define que os itens flexíveis (filhos do contêiner com display: flex) serão organizados em coluna, de cima para baixo. Neste caso aparecerá em colunas a parte de Motor Elétrico e Rastreador */
+  }
+}

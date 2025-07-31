@@ -1,0 +1,70 @@
+/* padding organiza o espaço interno e margin organiza o espaço externo. */
+
+/* Padding protege o conteúdo; margin protege o espaço ao redor. */
+
+.footer-bg {
+  background-color: var(--cor-12); /* cor de fundo */
+}
+
+.footer {
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 3fr 5fr 4fr; /* quantidade de colunas, neste caso 3 colunas com tamanhos diferentes */
+  gap: 40px; /* distância entre os elementos */
+  padding-top: 60px; /* distância acima */
+  padding-bottom: 60px; /* distância abaixo */
+}
+
+.footer h3 {
+  margin-bottom: 32px; /* margem abaixo */
+}
+
+.footer-contato ul {
+  margin-bottom: 32px; /* margem abaixo */
+}
+
+.footer-contato li:nth-child(even):after { /* linha decorativa q será adicionada após os elementos 2 e 4 da lista. (Só pode utilizar o even se forem apenas 4 elementos, mas q isso tem q dizer exatamente em quais elementos que deseja) */
+  content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
+  display: block; /*faz o elemento se comportar como um bloco*/
+  max-width: 360px; /* largura máxima*/
+  height: 2px; /* altura */
+  background: var(--cor-11); /* cor de fundo */
+  margin-top: 16px; /* margem acima */
+}
+
+.footer li {
+  margin-bottom: 16px; /* margem abaixo */
+}
+
+.footer-redes{
+  display: flex; /* ativa o formato flexbox ( um ao lado do outro) */
+  gap: 32px; /* distância entre os elementos */
+}
+
+.footer a:hover { /* aparecerá quando passar o mouse*/
+  color: var(--cor-0); /* cor do texto */
+}
+
+.footer-copy {
+  grid-column: 1/-1; /* faz o conteúdo ocupar da primeira até a última coluna */
+  margin-top: 40px; /* margem acima */
+}
+
+@media (max-width: 800px) { /*se a tela for menor que 800px de largura irá executar este bloco*/
+  .footer > img { /* seleciona apenas a imagem que é filha direta do footer */
+    display: none; /* retira a imagem */
+  }
+
+  .footer {
+    grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso 2 colunas com mesmo tamanho*/
+  }
+}
+
+@media (max-width: 600px) { /*se a tela for menor que 600px de largura irá executar este bloco*/
+  .footer {
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso apenas 1 coluna */
+    gap: 60px; /* distância entre os elementos */
+  }
+  .footer-copy {
+    margin-top: 0px; /* margem acima */
+  }
+}
