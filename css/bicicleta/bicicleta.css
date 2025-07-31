@@ -2,26 +2,27 @@
 
 /* Padding protege o conteúdo; margin protege o espaço ao redor. */
 .bicicleta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso 2 colunas com mesmo tamanho*/
   align-items: start;
-  gap: 40px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  gap: 40px; /* distância entre os elementos */
+  padding-top: 60px; /* distância acima */
+  padding-bottom: 60px; /* distância abaixo */
 }
 
 #bicicleta .titulo p {
-  text-transform: uppercase;
+  text-transform: uppercase; /* modifica o texto para maiúsculo */
 }
 
 .bicicleta-imagens {
-  display: flex;
+  display: flex; /* ativa o formato flexbox ( um ao lado do outro) */
   flex-wrap: wrap; /* quebra o conteúdo caso estoure o container */
-  gap: 20px;
+  gap: 20px; /* distância entre os elementos */
 }
 
 .bicicleta-imagens img {
-  flex: 1; /*  */
+  flex: 1; /* cresce para ocupar espaço disponível, pode encolher se necessário,
+e começa com tamanho de 0 */
   min-width: 200px; /* se der irá reduzir a lagura da imagem para 200px */
 }
 
@@ -30,16 +31,16 @@
 }
 
 .bicicleta-conteudo > p {
-  margin-bottom: 32px;
+  margin-bottom: 32px; /* margem abaixo */
 }
 
 .bicicleta-comprar {
-  display: grid;
-  grid-template-columns: max-content auto;
-  align-items: center;
-  justify-items: start;
-  gap: 8px 12px;
-  margin-bottom: 40px;
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: max-content auto; /* quantidade de colunas, neste caso a primeira com tamanho máximo para caber o conteúdo e a segunda com tamanho q sobrar */
+  align-items: center; /* alinha todos verticalmente ao centro do contêiner */
+  justify-items: start; /* Alinha horizontalmente o conteúdo de cada célula à esquerda */
+  gap: 8px 12px; /* distância entre os elementos (acima/abaixo, direita/esquerda)*/
+  margin-bottom: 40px; /* margem abaixo */
 }
 
 .bicicleta-comprar a {
@@ -47,75 +48,76 @@
 }
 
 .bicicleta-comprar span {
-  display: flex;
-  align-items: center;
-  background-color: var(--cor-12);
-  gap: 8px;
-  padding: 4px 8px;
-  border-radius: 4px;
+  display: flex; /* ativa o formato flexbox ( um ao lado do outro) */
+  align-items: center; /* alinha todos verticalmente ao centro do contêiner */
+  background-color: var(--cor-12); /* cor de fundo */
+  gap: 8px; /* distância entre os elementos */
+  padding: 4px 8px; /* distâncias acima/abaixo, direita/esquerda */
+  border-radius: 4px; /* arredondamento da borda */
 }
 
 .bicicleta-conteudo h2 {
-  text-transform: uppercase;
-  letter-spacing: 0.015em;
-  margin-bottom: 12px;
+  text-transform: uppercase; /* modifica o texto para maiúsculo */
+  letter-spacing: 0.015em; /* espaçamento entre as letras */
+  margin-bottom: 12px; /* margem abaixo */
 }
 
 .bicicleta-informacoes, .bicicleta-ficha {
-  padding: 32px;
-  background-color: var(--cor-12);
-  border-radius: 4px;
+  padding: 32px; /* distância em todas as direções */
+  background-color: var(--cor-12); /* cor de fundo */
+  border-radius: 4px; /* arredondamento da borda */
 }
 
 .bicicleta-informacoes {
-  margin-bottom: 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  margin-bottom: 40px; /* margem abaixo */
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso 2 colunas com mesmo tamanho*/
+  gap: 32px; /* distância entre os elementos */
 }
 
 .bicicleta-informacoes img {
-  width: 24px;
-  margin-bottom: 8px;
+  width: 24px; /* largura */
+  margin-bottom: 8px; /* margem abaixo */
 }
 
 .bicicleta-informacoes h3 {
-  margin-bottom: 8px;
+  margin-bottom: 8px; /* margem abaixo */
 }
 
 .bicicleta-ficha li {
-  padding: 4px 0;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--cor-11);
+  padding: 4px 0; /* distâncias acima/abaixo, direita/esquerda */
+  display: flex; /* ativa o formato flexbox ( um ao lado do outro) */
+  justify-content: space-between; /* distribui horizontalmente os itens com o maior espaço possível entre eles,
+colocando o primeiro item colado ao início e o último colado ao fim do contêiner. */
+  border-bottom: 1px solid var(--cor-11); /* borda inferior*/
 }
 
 .bicicleta-ficha li:last-child {
-  border-bottom: none;
+  border-bottom: none; /* borda inferior*/
 }
 
 .bicicleta-ficha span {
-  color: var(--cor-6);
+  color: var(--cor-6); /* cor do texto */
 }
 
 @media (max-width: 800px) {
   /*se a tela for menor que 800px de largura irá executareste bloco*/
   .bicicleta {
-    grid-template-columns: 1fr;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso apenas uma coluna*/
+    padding-top: 40px; /* distância acima */
+    padding-bottom: 40px; /* distância abaixo */
   }
   .bicicleta-imagens {
-    grid-row: 2;
+    grid-row: 2; /* especifica a linha q irá ficar o conteúdo */
   }
 }
 
 @media (max-width: 400px) {
-  /*se a tela for menor que 800px de largura irá executareste bloco*/
+  /*se a tela for menor que 400px de largura irá executareste bloco*/
   .bicicleta-informacoes {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso apenas uma coluna*/
   }
   .bicicleta-comprar {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso apenas uma coluna*/
   }
 }

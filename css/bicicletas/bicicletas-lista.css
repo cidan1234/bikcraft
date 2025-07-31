@@ -20,6 +20,10 @@
   overflow-x: auto; /* adiciona automaticamente uma barra de rolagem horizontal (eixo x) se o conteúdo for maior do que a largura da caixa */
 }
 
+#bicicleta .bicicletas-lista ul {
+  padding: 0px 0px 20px 0px; /* distâncias acima, direita, abaixo, esquerda  */
+}
+
 .bicicletas-lista li {
   /* cada item da lista */
   flex: 1; /* atalho para controlar quanto espaço um item flexível deve ocupar dentro de um contêiner (= flex-grow: 1, flex-shrink: 1 e flex-basis: 0%) */
