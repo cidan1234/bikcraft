@@ -2,3 +2,45 @@
 
 /* Padding protege o conteúdo; margin protege o espaço ao redor. */
 
+.form {
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso 2 colunas com tamanhos iguais */
+  gap: 20px;
+}
+
+.form label {
+  display: block;
+  font: 600 1rem/1.5 "Poppins", sans-serif; /* fonte - espessura (600 = negrito), tamanho (1rem), altura (1.5), nome da fonte (Poppins ou sans-serif)*/
+  margin-bottom: 4px; /* distância entre os elementos */
+}
+
+.form .col-2 {
+  grid-column: span 2; /* força o elemento a espandir ficando em duas colunas */
+}
+
+.form input[type="text"], .form input[type="email"], .form textarea {
+  font: 400 1rem/1.5 "Roboto", sans-serif; /* fonte - espessura (400), tamanho (1rem), altura (1.5), nome da fonte (Roboto ou sans-serif)*/
+  background: var(--cor-1); /* cor de fundo */
+  border: 1px solid var(--cor-2); /* cor da borda - espessura (1px), tipo da cor (sólida), cor (var(--cor-2)) */
+  padding: 12px; /* distância em todas as direções */
+  border-radius: 4px; /* arredondamento da borda */
+  width: 100%; /* força a ficar com a largura de 100% */
+  box-sizing: border-box; /* inclui o padding e a borda dentro do tamanho definido (width e height), necessário quando se define width ou height com 100% para não ficar com tamanho estourado na tela. */
+}
+
+.form input[type="text"]:focus, .form input[type="email"]:focus, .form textarea:focus {
+  outline: none; /* retira a linha da borda */
+  border-color: var(--cor-p1); /* cor da borda */
+  background: var(--cor-0); /* cor de fundo */
+  box-shadow: 0 0 0 2px #fea; /* sobreamento - deslocamento horizontal (0), deslocamento vertical (0), desfoque (0), cor (#fea) */
+}
+
+@media (max-width: 600px) {
+  /*se a tela for menor que 600px de largura irá executareste bloco*/
+  .form {
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso apenas 1 coluna */
+  }
+  .form .col-2 {
+    grid-column: 1; /* força o elemento a voltar a ocupar apenas 1 coluna */
+  }
+}

@@ -26,6 +26,8 @@
   color: var(--cor-p5); /* cor de fundo definida em utilidades/cores.css */
   font: 600 1.125rem/1.35 "Poppins", sans-serif; /* font-weight (peso/espessura), font-size (tamano da fonte), line-height (espaçamento entre linhas), font-family (fonte), fonte alternativa caso não tenha a escolhida */
   max-width: max-content; /* terá o tamanho máximo do conteúdo */
+  border: none; /* retira a linha da borda */
+  cursor: pointer; /* muda o cursor para mãozinha quando estiver em cima */
 }
 
 .botao:hover {
@@ -51,7 +53,8 @@
   align-items: center; /* alinha verticalmente os itens ao centro */
 }
 
-.botao.seta::after { /* seta decorativa do botão */
+.botao.seta::after {
+  /* seta decorativa do botão */
   content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
   display: inline-block; /*define um elemento como um "bloco em linha", permitindo assim personalizar tamanho e espaçamento (mantém o padding mesmo se a tela for reduzida)*/
   width: 18px; /* largura */
@@ -61,7 +64,8 @@
   transition: transform 0.2s; /* transição/animação */
 }
 
-.botao.seta:hover:after { /* aparecerá ao passar o mouse no ícone */
+.botao.seta:hover:after {
+  /* aparecerá ao passar o mouse no ícone */
   transform: translateX(4px); /* translacionar (deslocar) no eixo X */
 }
 
