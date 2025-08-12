@@ -1,0 +1,104 @@
+/* padding organiza o espaço interno e margin organiza o espaço externo. */
+
+/* Padding protege o conteúdo; margin protege o espaço ao redor. */
+
+#contato {
+  background: linear-gradient(
+    var(--cor-11) 600px,
+    var(--cor-1) 0px
+  ); /* cor de fundo gradiente */
+}
+
+.contato {
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 5fr 7fr; /* quantidade de colunas, neste caso 2 colunas com tamanhos diferentes */
+}
+
+.contato-dados,
+.contato-formulario {
+  padding: 60px; /* distância em todas as direções */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* sobreamento - deslocamento horizontal (0), deslocamento vertical (1px), desfoque (2px), cor (rgba) */
+}
+
+.contato-dados {
+  border-radius: 5px 0 0 5px; /* arredondamento da borda (top, right, bottom, left)  */
+  background: var(--cor-12); /* cor de fundo */
+}
+
+.contato-formulario {
+  border-radius: 0 5px 5px 0; /* arredondamento da borda (top, right, bottom, left)  */
+  background: var(--cor-0); /* cor de fundo */
+}
+
+.contato-dados h2 {
+  margin-bottom: 60px; /* margem abaixo*/
+}
+
+.contato-endereco {
+  margin-bottom: 32px; /* margem abaixo*/
+  padding-left: 28px; /* distância à esquerda */
+  background: url("../../img/icones/local.svg") no-repeat 0px 2px; /* cor de fundo, neste caso será um ícone único, q não irá se repetir para preencher todo fundo, com distância de 0px na direita e esquerda e 2px acima e abaixo */
+}
+
+.contato-endereco {
+  padding-bottom: 8px; /* distância abaixo */
+}
+
+.contato-meios a {
+  display: block; /* força o elemento a se comportar como um bloco e não um inline, com isso ocorre a quebra de linha */
+  max-width: max-content; /* força a ficar sempre com tamanho máximo do contúdo */
+  margin-bottom: 8px; /* margem abaixo*/
+  padding-left: 28px; /* distância à esquerda */
+}
+
+.contato-meios a:hover {
+  /* irá ser executado ao passar o mouse */
+  color: var(--cor-0); /* cor do texto */
+}
+
+.contato-meios a:first-child {
+  /* seleciona apenas o primeiro filho de "a" (primeiro contato)*/
+  background: url("../../img/icones/email.svg") no-repeat 0px 2px; /* cor de fundo, neste caso será um ícone único, q não irá se repetir para preencher todo fundo, com distância de 0px na direita e esquerda e 2px acima e abaixo */
+}
+
+.contato-meios a:nth-child(2) {
+  /* seleciona apenas o segundo "a" (segundo contato) */
+  margin-bottom: 32px; /* margem abaixo*/
+}
+
+.contato-meios a:nth-child(3) {
+  /* seleciona apenas o terceiro "a" (terceiro contato) */
+  background: url("../../img/icones/telefone.svg") no-repeat 0px 2px; /* cor de fundo, neste caso será um ícone único, q não irá se repetir para preencher todo fundo, com distância de 0px na direita e esquerda e 2px acima e abaixo */
+  margin-bottom: 60px; /* margem abaixo*/
+}
+
+.contato-redes {
+  display: flex; /* ativa o formato flexbox ( um ao lado do outro) */
+  gap: 32px; /* distância entre os elementos */
+  padding-left: 28px; /* distância à esquerda */
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executareste bloco*/
+  .contato {
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso apenas 1 coluna */
+  }
+  .contato-dados,
+  .contato-formulario {
+    padding: 20px; /* distância em todas as direções */
+  }
+  .contato-dados {
+    border-radius: 5px 5px 0 0; /* arredondamento da borda (top, right, bottom, left) */
+  }
+  .contato-formulario {
+    border-radius: 0 0 5px 5px; /* arredondamento da borda (top, right, bottom, left) */
+  }
+  .contato-dados h2,
+  .contato-meios a:nth-child(3) {
+    /* seleciona apenas o terceiro "h2" (terceira linha do endereço) e o terceiro "a" (terceiro contato) */
+    margin-bottom: 32px; /* margem abaixo*/
+  }
+  .contato-redes {
+    margin-bottom: 12px; /* margem abaixo*/
+  }
+}
