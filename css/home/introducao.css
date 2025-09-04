@@ -3,7 +3,7 @@
 /* Padding protege o conteúdo; margin protege o espaço ao redor. */
 
 .introducao-bg {
-  background: var(--cor-12); /* cor de fundo definida em utilidades/cores.css */
+  background: var(--cor-12) url('../../img/dec/bottom-left.svg') no-repeat bottom 160px left 20px; /* cor de fundo definida em utilidades/cores.css + item decorativo (item único, sem repetição, alinha abaixo e à esquerda - está com 160px de distância da parte de baixo senão ficaria escondido no shadow q é a parte branca) */
   box-shadow: inset 0 -120px var(--cor-0); /* sombreamento, nesse caso vai deixar uma parte inferior do background branco, fazendo a ilusão de q a imagem passa do tamanho total do fundo (cor de fundo definida em utilidades/cores.css) */
 }
 

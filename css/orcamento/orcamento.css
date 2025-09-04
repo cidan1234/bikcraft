@@ -1,0 +1,189 @@
+/* padding organiza o espaço interno e margin organiza o espaço externo. */
+
+/* Padding protege o conteúdo; margin protege o espaço ao redor. */
+
+#orcamento {
+  background: linear-gradient(
+    var(--cor-11) 600px,
+    var(--cor-1) 0px
+  ); /* cor de fundo gradiente */
+}
+
+.orcamento {
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 5fr 7fr; /* quantidade de colunas, neste caso 2 colunas com tamanhos diferentes */
+  padding-bottom: 120px; /* distância abaixo */
+}
+
+.orcamento h2 {
+  text-transform: uppercase; /* transforma o texto em maiúsculo */
+  position: relative; /*faz o elemento permanecer no fluxo normal da página (na sua posição original) - usado para travar o conteúdo caso tenha outro conteúdo no bloco que precisa ser alterada sua posição (o outro elemento será position: absolute)*/
+  display: flex; /* ativa o formato flexbox ( um ao lado do outro) */
+  align-items: center; /* alinhamento vertical ao centro */
+}
+
+.orcamento h2::before { /* item decorativo amarelo antes os títulos */
+  content: ""; /*conteúdo, normalmente se usa vazio mesmo*/
+  display: inline-block; /*define um elemento como um "bloco em linha", permitindo assim personalizar tamanho e espaçamento (mantém o padding mesmo se a tela for reduzida)*/
+  width: 4px;  /* largura*/
+  height: 8px; /* altura */
+  background-color: var(--cor-p1); /* cor de fundo */
+  position: absolute; /*faz com que o elemento seja removido do fluxo normal, posicionando-o relativamente ao elemento pai (ao bloco q foi definido como position:relative, se não tivesse um elemento pai com a configuração de position ele seria movido em relação ao html ou body)*/
+  left: -12px; /* espaçamento à esquerda */
+}
+
+.orcamento-produto,
+.orcamento-dados {
+  padding: 60px; /* distância em todas as direções */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* sobreamento - deslocamento horizontal (0), deslocamento vertical (1px), desfoque (2px), cor (rgba) */
+}
+
+.orcamento-produto {
+  border-radius: 5px 0 0 5px; /* arredondamento das bordas */
+  background: var(--cor-12) url('../../img/dec/bottom-left.svg') no-repeat bottom 20px left 20px; /* cor de fundo e item decorativo (item único, sem repetição, alinhado abaixo e à esquerda) */
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso 2 colunas com mesmo tamanho*/
+  gap: 20px; /* distância entre os elementos */
+  align-content: start; /* alinha verticalmente o conteúdo ao início */
+}
+
+.orcamento-produto > * { /* seleciona todos os elementos que são filhos diretos de .orcamento-produto */
+  grid-column: 1/-1; /* faz o conteúdo ocupar da primeira até a última coluna */
+}
+
+.orcamento-produto > label { /* seleciona os labels que são filhos diretos de .orcamento-produto */
+  grid-column: initial; /* força o conteúdo a ocupar somente a primeira coluna */
+}
+
+.orcamento-produto label {
+  font: 400 1rem/1.5 "Poppins", sans-serif; /* font-weight (peso/espessura), font-size (tamano da fonte), line-height (espaçamento entre linhas), font-family (fonte), fonte alternativa caso não tenha a escolhida */
+  color: var(--cor-4); /* cor do texto */
+  background-color: var(--cor-10);  /* cor de fundo */
+  padding: 12px 16px; /* distância acima/abaixo direita/esquerda */
+  border-radius: 4px; /* arredondamento das bordas */
+  cursor: pointer; /* muda o cursor para mãozinha quando estiver em cima */
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: auto 1fr auto; /* quantidade de colunas, neste caso 3 colunas com tamanhos diferentes, a primeira e a última acompanhando o tamanho do conteúdo*/
+  align-items: center;  /* alinhamento vertical ao centro */
+  border: 1px solid var(--cor-10); /* criando uma borda "invisível" da mesma cor do fundo para posteriormente alterar a cor quando for selecionado */
+}
+
+.orcamento-produto input:checked + label { /* quando um input for marcado irá selecionar a label */
+  background: var(--cor-0); /* cor de fundo */
+  color: var(--cor-11); /* cor do texto */
+}
+
+.orcamento-produto label::before { /* item estilizado, criado para simular a bolinha do radio buttom (decoração da bolinha sem estar clicada)*/
+  content: "";  /*conteúdo, normalmente se usa vazio mesmo*/
+  display: inline-block; /*define um elemento como um "bloco em linha", permitindo assim personalizar tamanho e espaçamento (mantém o padding mesmo se a tela for reduzida)*/
+  box-sizing: border-box; /* inclui o padding e a borda dentro do tamanho definido (width e height). */
+  width: 12px; /* largura*/
+  height: 12px; /* altura */
+  border: 1px solid var(--cor-6); /* cor da borda - espessura (1px), tipo da cor (sólida), cor (definida em cores.css) */
+  border-radius: 50%; /* arredondamento da borda deixando totalmente circular */
+  margin-right: 8px; /* margem direita */
+}
+
+.orcamento-produto input:checked + label::before { /* quando um input for marcado, será adicionada antes do label  uma decoração na bolinha criada anteriormente para simular o radio buttom) */
+  border-color: var(--cor-7); /* cor da borda */
+  box-shadow: inset 0 0 0 3px var(--cor-0), inset 0 0 0 6px var(--cor-7); /* serão dois sobreamentos: sobreamento interno (inset), deslocamento horizontal (0), deslocamento vertical (0), desfoque (0), cor (definida anteriormente em cores.css) */
+}
+
+.orcamento-produto label:hover { /* quando passar o maouse por cima */
+  background-color: var(--cor-9); /* cor de fundo */
+  border-color: var(--cor-9); /* altera a cor da borda definida anteiormente, para ficar com a mesma cor de fundo ao passar o mouse */
+}
+
+.orcamento-produto input:focus + label { /* seleciona o label quando um input for clicado (estiver em foco) */
+  box-shadow: 0 0 0 2px var(--cor-p1); /* sobreamento - deslocamento horizontal (0), deslocamento vertical (0), desfoque (2px), cor (definida em cores.css) */
+  border-color: var(--cor-12); /* não precisa mais determinar a borda por completo pq o elemento já tem, basta mudar a cor */
+}
+
+.orcamento-produto label span {
+  display: none; /* esconde o preço (span) inicialmente */
+}
+
+.orcamento-produto input:checked + label span {  /* quando um input for marcado, será selecionado o span do label */
+  display: inline-block; /* define um elemento como um "bloco em linha", permitindo assim personalizar tamanho e espaçamento (mantém o padding mesmo se a tela for reduzida), neste caso volta a mostrar o preço (span) quando a opção for selecionada */
+}
+
+.orcamento-produto input {
+  /* se tivesse outro tipo de input no site teria que especificar assim: input[type="radio"] */
+  /* neste caso este bloco é para retirar a bolinha padrão do radio buttom para posteriormente criar uma bolinha personalizada */
+  opacity: 0; /* opacidade, neste caso ficará totalmente transparente */
+  position: absolute; /*faz com que o elemento seja removido do fluxo normal, posicionando-o relativamente ao elemento pai (ao bloco q foi definido como position:relative, se não tivesse um elemento pai com a configuração de position ele seria movido em relação ao html ou body)*/
+  pointer-events: none; /* tira a opção de poder selecionar, some com o cursor */
+}
+
+.orcamento-dados {
+  border-radius: 0 5px 5px 0; /* arredondamento das bordas */
+  background: var(--cor-0) url('../../img/dec/bottom-right.svg') no-repeat bottom 20px right 20px; /* cor de fundo e item decorativo (item único, sem repetição, alinhado abaixo e à direita) */ 
+}
+
+.orcamento-conteudo {
+  display: none; /* some com o conteúdo */
+}
+
+.orcamento-conteudo h2, .orcamento-dados h2:nth-of-type(n + 2) { /* h2:nth-of-type(n + 2) - vai selecionar os elementos h2 a partir do segundo */
+  margin-top: 20px; /* margem acima */
+}
+
+/* MODO DE FAZER APARECER APENAS UM DOS TEXTOS DE ACORDO COM A OPÇÃO ESCOLHIDA DE RADIO BUTTOM */
+#bikcraft:checked ~ #orcamento-bikcraft,
+#seguro:checked ~ #orcamento-seguro {
+  /* quer dizer : quando o input com id bikcraft estiver marcado, selecione o elemento irmão posterior com id orcamento-bikcraft, sendo q os dois precisam estar no mesmo nível do código, ou seja, ter o mesmo elemento pai. A mesma coisa para seguro. */
+  display: grid; /* volta a mostrar o elemento que anteriormente foi escondido com a propriedade display: none, agora simulando colunas */
+  gap: 20px; /* distância entre os elementos */
+}
+
+.orcamento-detalhes {
+  display: none; /* esconde os detalhes da opção inicialmente */
+  background: var(--cor-0); /* cor de fundo */
+  padding: 20px; /* distância em todas as direções */
+  grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso 2 colunas com mesmo tamanho*/
+  border-radius: 4px; /* arredondamento das bordas */
+  align-items: center;  /* alinhamento vertical ao centro */
+}
+
+.orcamento-detalhes li {
+  display: flex; /* ativa o formato flexbox ( um ao lado do outro) */
+  align-items: center;  /* alinhamento vertical ao centro */
+  margin-bottom: 8px; /* distância abaixo */
+}
+
+.orcamento-detalhes li img {
+  width: 16px; /* largura*/
+  margin-right: 8px; /* margem à direita */
+}
+
+.orcamento-produto input:checked + label + .orcamento-detalhes {  /* quando um input for marcado, será selecionado o .orcamento-detalhes que vem após o label */
+  display: grid; /* ativa o formato grid (colunas), neste caso volta a mostrar os detalhes da opção escolhida */
+}
+
+@media (max-width: 1200px) {
+  /*se a tela for menor que 1200px de largura irá executareste bloco*/
+  .orcamento-produto, .orcamento-dados {
+    padding: 32px; /* distância em todas as direções */
+  }
+}
+
+@media (max-width: 800px) {
+  /*se a tela for menor que 800px de largura irá executareste bloco*/
+  .orcamento {
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso apenas 1 coluna */
+  }
+  .orcamento-produto {
+    border-radius: 5px 5px 0 0; /* arredondamento das bordas */
+    background: var(--cor-12);
+  }
+  .orcamento-dados {
+    border-radius: 0 0 5px 5px; /* arredondamento das bordas */
+  }
+}
+
+@media (max-width: 400px) {
+  /*se a tela for menor que 400px de largura irá executareste bloco*/
+  .orcamento-produto {
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso apenas 1 coluna */
+  }
+}

@@ -2,71 +2,71 @@
 
 /* Padding protege o conteúdo; margin protege o espaço ao redor. */
 .lojas {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso 2 colunas com tamanhos iguais */
   gap: 0 40px; /* distância entre os elementos acima/abaixo, esquerda/direita */
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 120px; /* distância acima */
+  padding-bottom: 120px; /* distância abaixo */
 }
 
 .lojas h2 {
-  grid-column: 1/-1;
-  margin-bottom: 60px;
+  grid-column: 1/-1; /* força o item a ocupar da primeira até a última coluna */
+  margin-bottom: 60px; /* margem abaixo */
 }
 
 .lojas img {
-  border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0; /* arredondamento da borda */
 }
 
 .lojas-item {
-  border-radius: 4px;
-  background: var(--cor-0);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px; /* arredondamento da borda */
+  background: var(--cor-0); /* cor de fundo */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* sobreamento - deslocamento horizontal (0), deslocamento vertical (1px), desfoque (2px), cor (rgba) */
 }
 
 .lojas-conteudo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: grid; /* ativa o formato grid (colunas) */
+  grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso 2 colunas com tamanhos iguais */
   gap: 32px 16px; /* distância entre os elementos acima/abaixo, esquerda/direita */
-  padding: 32px;
+  padding: 32px; /* distância em todas as direções */
 }
 
 .lojas-conteudo h3,
 .lojas-tempo {
-  grid-column: 1/-1;
+  grid-column: 1/-1; /* força o item a ocupar da primeira até a última coluna */
 }
 
 .lojas-dados {
-  display: grid;
-  gap: 8px;
-  border-left: 2px solid var(--cor-2);
-  padding-left: 12px;
+  display: grid; /* ativa o formato grid (colunas) */
+  gap: 8px; /* distância entre os elementos */
+  border-left: 2px solid var(--cor-2); /* borda à esquerda - espessura (2px), tipo da cor (sólida), cor (var(--cor-2)  */
+  padding-left: 12px; /* distância à esquerda */
 }
 
 .lojas-tempo {
-  display: flex;
+  display: flex; /* ativa o formato flexbox ( um ao lado do outro) */
   align-items: center;
-  gap: 8px;
+  gap: 8px; /* distância entre os elementos */
 }
 
 @media (max-width: 800px) {
   /*se a tela for menor que 800px de largura irá executareste bloco*/
   .lojas {
-    gap: 20px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    gap: 20px; /* distância entre os elementos */
+    padding-top: 60px; /* distância acima */
+    padding-bottom: 60px; /* distância abaixo */
   }
   .lojas h2 {
-    margin-bottom: 32px;
+    margin-bottom: 32px; /* margem abaixo */
   }
   .lojas-conteudo {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso apenas 1 coluna */
   }
 }
 
 @media (max-width: 600px) {
   /*se a tela for menor que 600px de largura irá executareste bloco*/
   .lojas {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* quantidade de colunas, neste caso apenas 1 coluna */
   }
 }

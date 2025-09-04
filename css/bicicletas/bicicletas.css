@@ -16,6 +16,7 @@
   gap: 40px; /* distância entre os elementos */
   padding-top: 60px; /* distância acima */
   padding-bottom: 60px; /* distância abaixo */
+  background: url('../../img/dec/top-right.svg') no-repeat top 40px right 20px; /* item decorativo (item único, sem repetição, alinha acima e à direita)*/;
 }
 
 .bicicletas-imagem {

@@ -105,6 +105,10 @@
   background-color: var(--cor-11);
 }
 
+.titulo {
+  background: url('../../img/dec/top-right.svg') no-repeat top right 20px; /* item decorativo (item único, sem repetição, alinhado acima e à direita)*/
+}
+
 .titulo P {
   margin-bottom: 4px;
 }

@@ -22,12 +22,12 @@
 
 .contato-dados {
   border-radius: 5px 0 0 5px; /* arredondamento da borda (top, right, bottom, left)  */
-  background: var(--cor-12); /* cor de fundo */
+  background: var(--cor-12) url('../../img/dec/bottom-left.svg') no-repeat bottom 20px left 20px; /* cor de fundo e item decorativo (item único, sem repetição, alinhado abaixo e à esquerda)*/
 }
 
 .contato-formulario {
   border-radius: 0 5px 5px 0; /* arredondamento da borda (top, right, bottom, left)  */
-  background: var(--cor-0); /* cor de fundo */
+  background: var(--cor-0) url('../../img/dec/bottom-right.svg') no-repeat bottom 20px right 20px; /* cor de fundo e item decorativo (item único, sem repetição, alinhado abaixo e à direita)*/
 }
 
 .contato-dados h2 {
@@ -89,6 +89,7 @@
   }
   .contato-dados {
     border-radius: 5px 5px 0 0; /* arredondamento da borda (top, right, bottom, left) */
+    background: var(--cor-12); /* cor de fundo */
   }
   .contato-formulario {
     border-radius: 0 0 5px 5px; /* arredondamento da borda (top, right, bottom, left) */

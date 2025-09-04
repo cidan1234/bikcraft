@@ -5,13 +5,13 @@
 .form {
   display: grid; /* ativa o formato grid (colunas) */
   grid-template-columns: 1fr 1fr; /* quantidade de colunas, neste caso 2 colunas com tamanhos iguais */
-  gap: 20px;
+  gap: 20px; /* distância entre os elementos */
 }
 
 .form label {
   display: block;
-  font: 600 1rem/1.5 "Poppins", sans-serif; /* fonte - espessura (600 = negrito), tamanho (1rem), altura (1.5), nome da fonte (Poppins ou sans-serif)*/
-  margin-bottom: 4px; /* distância entre os elementos */
+  font: 400 1rem/1.5 "Poppins", sans-serif; /* fonte - espessura (600 = negrito), tamanho (1rem), altura (1.5), nome da fonte (Poppins ou sans-serif)*/
+  margin-bottom: 4px; /* margem abaixo */
 }
 
 .form .col-2 {

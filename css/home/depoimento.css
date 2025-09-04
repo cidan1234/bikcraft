@@ -14,7 +14,8 @@
 
 .depoimento-conteudo {
   padding: 40px 40px 80px 80px; /* distância acima, direita, abaixo e esquerda */
-  align-self: flex-end; /* alinha verticalmente o texto ao final do container */
+  align-self: end; /* alinha verticalmente o texto ao final do container */
+  background: url('../../img/dec/bottom-right-p.svg') no-repeat bottom 40px right 40px; /*item decorativo (item único, sem repetição, alinha abaixo e à direita)*/
 }
 
 .depoimento-conteudo p {
@@ -54,5 +55,11 @@
   .depoimento-conteudo {
     padding: 40px 20px; /* distância acima/abaixo, direita/esquerda */
     justify-self: center; /* centraliza horizontamente um item individual dentro de um container com display:grid */
+  }
+}
+
+@media (min-width: 1200px) { /* se a tela for maior que 1200px de largura irá executar este bloco*/
+  .depoimento img {
+    max-height: 520px;
   }
 }
