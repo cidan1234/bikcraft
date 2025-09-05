@@ -31,6 +31,7 @@ a {
 
 img {
   max-width: 100%; /*largura máxima*/
+  height: auto; /* irá aumentar a altura de acordo com o a largura da imagem */
   display: block; /*faz o elemento se comportar como um bloco*/
 }
 
